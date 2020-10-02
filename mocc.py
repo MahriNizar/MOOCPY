@@ -1,15 +1,91 @@
-def rendre_monnaie(prix,x20,x10,x5,x2,x1):
-    a,b,c,d,e = x20*20,x10*10,x5*5,x2*2,x1
-    somme_argent = a+b+c+d+e 
-    if somme_argent < prix:
-        return (None,None,None,None,None)
-    else:
-        somme_argent -= prix
-        b20 = (somme_argent -(somme_argent % 20))/20
-        b10 = int(10-((somme_argent%20) %10))
-        b5 = int((somme_argent%20)/5)
-        b2 = int((somme_argent%20)/2)
-        b1 = ((((somme_argent%20) %10)%5)%2)
-        return (b20,b10,b5,b2,b1)
-print(rendre_monnaie(100,0,14,5,5,1))
-"3.1.1.0.1"
+import random
+
+# def pierre_Feuille_ciseaux(x,t,):
+#     sco = 0
+#     li = [j1,j2,j3,j4,j5]
+#     play = li[i]
+#     if play == 0 and x==2:
+#         sco += 1
+#         res = "Pierre bat Ciseaux : {score += sco}".format(sco) 
+#     elif play == 1 and x==0:
+#         sco += 1
+#         res = "Feuille bat Pierre : {score += sco}".format(sco)
+#     elif play == 2 and x ==1:
+#         sco += 1
+#         res = "Ciseaux bat Feuille : {score += sco}".format(sco)
+#     elif play == 0 and x ==1:
+#         sco -= 1
+#         res = "Pierre est battu par Feuille : {score += sco}".format(sco)
+#     elif play == 1 and x==2:
+#         sco -= 1
+#         res = "Feuille est battu par Ciseaux : {score += sco}".format(sco)
+#     elif play == 2 and x ==0:
+#         sco -= 1
+#         res = "Ciseaux est battu par Pierre : {score += sco}".format(sco)
+#     elif play==0 and x ==0:
+#         sco += 0
+#         res = "Pierre annule Pierre : {score += sco}".format(sco)
+#     elif play==1 and x==1:
+#         sco += 0
+#         res = "Feuille annule Feuille : {score += sco}".format(sco)
+#     elif play ==2 and x==2:
+#         sco+=0
+#         res = "Ciseaux annule Ciseaux : {score += sco}".format(sco)
+    # return res
+score = 0
+s= int(input())
+random.seed(s)
+j1= int(input())
+j2= int(input())
+j3= int(input())
+j4= int(input())
+j5= int(input())
+for i in range(5):
+    x = random.randint(0,2)
+    sco = 0
+    li = [j1,j2,j3,j4,j5]
+    play = li[i]
+    if play == 2 and x==0:
+        sco -= 1
+        score+=sco
+        print(f"Pierre bat Ciseaux : {score}")
+    elif play == 0 and x==1:
+        sco -= 1
+        score+=sco
+        print(f"Feuille bat Pierre : {score}")
+    elif play == 1 and x ==2:
+        sco -= 1
+        score+=sco
+        print(f"Ciseaux bat Feuille : {score}")
+    elif play == 1 and x ==0:
+        sco += 1
+        score+=sco
+        print(f"Pierre est battu par Feuille : {score}")
+    elif play == 2 and x==1:
+        sco += 1
+        score+=sco
+        print(f"Feuille est battu par Ciseaux : {score}")
+    elif play == 0 and x ==2:
+        sco += 1
+        score+=sco
+        print(f"Ciseaux est battu par Pierre : {score}")
+    elif play==0 and x ==0:
+        
+        score += 0
+        print(f"Pierre annule Pierre : {score}")
+    elif play==1 and x==1:
+        
+        score += 0
+        print(f"Feuille annule Feuille : {score}")
+    elif play ==2 and x==2:
+        
+        score -=0 
+        print(f"Ciseaux annule Ciseaux : {score}")
+    
+    
+if score  >0:
+    print("Gagné")
+elif score ==0:
+    print("Nul")
+else:
+    print("Perdu")
