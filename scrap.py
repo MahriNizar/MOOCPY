@@ -1,3 +1,3 @@
-res = 27
-strea = "hello {}".format(res)
-print(strea)
+x ="hello"
+for i in x:
+    print(i)
