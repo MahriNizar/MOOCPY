@@ -1,14 +1,3 @@
-def dupliques(li):
-    res = ""
-    for i in li:
-        if li.count(i) != 1:
-            res = True
-            break
-        else:
-            res = False
-    if li == "":
-        res = False
-    return res
-
-
-print(dupliques(""))
+s = [1, 2, 3, 4, 5, 6, 7]
+s[len(s)-1:] = []
+print(s)
